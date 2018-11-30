@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 let AccountModel = {};
-let SockModel = {};
 const iterations = 10000;
 const saltLength = 64;
 const keyLength = 64;
@@ -129,7 +128,7 @@ AccountSchema.statics.addFunds = (doc, fundsToAdd, callback) => { // return upda
   return updatedInfo;
 };
 
-AccountSchema.statics.buySocks = (doc, name, socksPrice, category, picture, callback) => { // return updated purchase info
+AccountSchema.statics.buySocks = (doc, socksPrice, callback) => { // return updated purchase info
   const info = {
     username: doc.username,
     purchases: doc.purchases,
