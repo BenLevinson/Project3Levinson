@@ -1,0 +1,512 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: lightgrey !important;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: #55acee;
+    position: relative;
+    top: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+nav:nth-child(1) {
+    padding-left: 25px;
+}
+
+.navlink {
+    padding-top: 7px;
+    padding-right: 10px;
+    color: white;
+    font-size: 1.2em;
+    float: right;
+    position: relative;
+    right: 15px;
+}
+
+.navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #55acee;
+    transition: background-color 0.4s ease;
+}
+
+.navlink a:hover {
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+}
+
+.mainForm {
+    height: 300px;
+    width: 350px;
+    margin: 0 auto;
+    padding-top: 30px;
+    font-size: 1.2em;
+}
+
+.mainForm h3 {
+    text-align: center;
+}
+
+.mainForm label {
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+.formSubmit {
+    transition: background-color 0.4s ease;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 14px;
+    font-size: 1.2em;
+    width: 100px;
+    background-color: #55acee;
+    border-radius: 2px;
+    border-color: #66acee;
+    padding: 3px 0px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.formSubmit:link, .formSubmit:visited, .formSubmit:hover, .formSubmit:active {
+    color: white;
+}
+
+.formSubmit:hover {
+    transition: background-color 0.4s ease;
+    background-color: #338acc;
+    cursor: pointer;
+}
+
+#user, #pass, #pass2 {
+    text-align: center;
+    font-size: 1.1em;
+    width: 180px;
+    border-radius: 6px;
+}
+
+#user:focus, #pass:focus, #pass2:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 1px #55acee;
+}
+
+.taglineDiv {
+    text-align: center;
+    background-color:  #55acee;
+    position: relative;
+    top: 10px;
+    width: 100%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.taglineDiv h1 {
+    position: relative;
+    bottom: 15px;
+    font-size: 35px;
+}
+
+.taglineDiv h3{
+    position: relative;
+    bottom: 15px;
+    font-style: italic;
+    font-size: 20px;
+}
+
+#loginStart {
+    text-align: center;
+}
+
+#accountStart {
+    text-align: center;
+}
+
+#topRow label {
+    font-weight: bold;
+    display: block;
+    position: relative;
+    top: 10px;
+}
+
+#bottomRow label {
+    font-weight: bold;
+    display: block;
+    position: relative;
+    top: 10px;
+}
+
+.sockClass {
+    border: 2px solid black;
+    width: 350px;
+    height: 250px;
+    border-radius: 25px;
+}
+
+.sockClass:hover {
+    cursor: pointer;
+}
+
+#scarySock {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+}
+
+#crazySock {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+}
+
+#funnySock {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+}
+
+#coolSock {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+    top: 20px;
+}
+
+#superSock {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+    top: 20px;
+}
+
+#normalSock {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+    top: 20px;
+}
+
+#accountInfo {
+    border: 2px solid black;
+    border-radius: 25px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+}
+
+#accountInfo h1 {
+    font-size: 34px;
+}
+
+#accountInfo p {
+    font-size: 24px;
+    text-align: left;
+    padding-left: 35%;
+}
+
+#searchInfo {
+    position: relative;
+    text-align: center;
+}
+
+#searchBar {
+    width: 300px;
+    height: 30px;
+}
+
+.searchSubmit {
+    width: 40px;
+    height: 32px;
+    position: relative;
+    top: 10px;
+    padding-left: 10px;
+}
+
+.searchSubmit:hover {
+    cursor: pointer;
+}
+
+#displayContent {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    left: 40px;
+}
+
+#displayContent img {
+    width: 125px;
+    height: 125px;
+    padding-top: 20px;
+}
+
+#displayContent img:hover {
+    cursor: pointer;
+}
+
+.imgContentDiv {
+    width: 125px;
+    height: 145px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+.imgContentDiv h5 {
+    text-align: center;
+    font-size: 13px;
+    position: relative;
+    top: 5px;
+}
+
+#topRowSocks {
+    height: 145px;
+}
+
+#secondRowSocks {
+    height: 145px;
+}
+
+#thirdRowSocks {
+    height: 145px;
+}
+
+#fourthRowSocks {
+    height: 145px;
+}
+
+#bottomRowSocks {
+    height: 145px;
+}
+
+#hiddenContent {
+    display: none;
+}
+
+#errorMessage {
+    display: none;
+    position: relative;
+    z-index: 200;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+    top: 15px;
+}
+
+#errMessage {
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#passSubmit {
+    width: 150px;
+}
+
+.passForm {
+    margin: 10px;
+    position: relative;
+    width: 250px;
+    display: inline-block;
+}
+
+.passForm label {
+    font-size: 15px;
+    margin: 10px;
+}
+
+.passForm input {
+    display: block;
+    margin: 0 auto;
+}
+
+#fundsSubmit {
+    width: 150px;
+    position: relative;
+    top: 3px;
+}
+
+.fundsForm {
+    position: relative;
+    width: 250px;
+    display: inline-block;
+    bottom: 20px;
+}
+
+.fundsForm label {
+    font-size: 15px;
+    margin: 10px;
+}
+
+.fundsForm input {
+    display: block;
+    margin: 0 auto;
+}
+
+#notFoundPage {
+    margin: auto;
+    padding: 150px;
+    text-align: center;
+    font-size: 50px;
+}
+
+#notFoundLink {
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    position: relative;
+    bottom: 100px;
+}
+
+#buyInfo {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#buyInfo img {
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 25px;
+    position: relative;
+    right: 200px;
+    top: 50px;
+}
+
+#buyInfo h3 {
+    position: relative;
+    left: 100px;
+    bottom: 200px;
+}
+
+.buyForm { 
+    font-size: 24px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    bottom: 92px;
+    left: 50px;
+}
+
+.buyForm:hover {
+    cursor: pointer;
+}
+
+#similarSocks {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+#similarSocks h3 {
+    position: relative;
+    top: 70px;
+}
+
+#similarSocks h5 {
+    font-size: 18px;
+}
+
+#similarSocks img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+#socksR {
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+#sock1 {
+    display: inline-block;
+    padding-right: 75px;
+    padding-left: 75px;
+    padding-top: 10px;
+}
+
+#sock2 {
+    display: inline-block;
+    padding-right: 75px;
+    padding-left: 75px;
+    margin: 0 auto;
+}
+
+#sock3 {
+    display: inline-block;
+    margin: 0 auto;
+    padding-right: 75px;
+    padding-left: 75px;
+}
+
+#sock1:hover {
+    cursor: pointer;
+}
+
+#sock2 {
+    cursor: pointer;
+}
+
+#sock3 {
+    cursor: pointer;
+}
+
+#noResults {
+    visibility: hidden;
+    text-align: center;
+}
+
+#confirmStart {
+    text-align: center;
+}
+
+#confirmInfo {
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+#backBrowsingTab {
+    display: inline-block;
+    padding: 50px;
+}
+
+#myCollectionTab {
+    display: inline-block;
+    padding: 50px;
+}
+
+#myCollectionTab img {
+    transform: rotate(180deg);
+}
+
+#confirmInfo img {
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+#collectionStart {
+    text-align: center;
+}

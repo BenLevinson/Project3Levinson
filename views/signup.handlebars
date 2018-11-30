@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Socko's Socks</title>
+  <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="navlink"><a id="signupButton" href="/signup">Sign up</a></div>
+      <div class="navlink"><a id="loginButton" href="/login">Login</a></div>
+      <div class="navlink"><a id="homeButton" href="/home">Home</a></div>
+    </nav>
+    <section id="content"> </section>
+    <div id="errorMessage">
+      <h3><span id="errMessage"></span></h3>
+    </div>
+  </div>
+  <script src="/assets/loginBundle.js"></script>
+</body>
+</html>
