@@ -131,91 +131,611 @@ var handleBuySocks = function handleBuySocks(e) {
   return false;
 };
 
+var handleInfo = function handleInfo(e, num) {
+  console.log(num);
+  switch (num) {
+    case 1:
+      $("#infoOne").animate({ height: 'toggle' }, 350);
+      document.querySelector("#infoOne").style.display = "block";
+      break;
+    case 2:
+      $("#infoTwo").animate({ height: 'toggle' }, 350);
+      document.querySelector("#infoTwo").style.display = "block";
+      break;
+    case 3:
+      $("#infoThree").animate({ height: 'toggle' }, 350);
+      document.querySelector("#infoThree").style.display = "block";
+      break;
+  }
+};
+
+var createInvObject = function createInvObject() {
+  sendAjax('GET', '/getAccInfo', null, function (data) {
+    ReactDOM.render(React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { id: 'collectionStart' },
+        React.createElement(
+          'div',
+          { className: 'taglineDiv' },
+          React.createElement(
+            'h1',
+            null,
+            ' Socko\'s Socks! '
+          ),
+          React.createElement(
+            'h3',
+            null,
+            ' "Who needs friends when you have cool socks?" '
+          )
+        ),
+        React.createElement(
+          'div',
+          { id: 'collectionInfo' },
+          React.createElement(
+            'h3',
+            null,
+            ' ',
+            React.createElement(
+              'b',
+              null,
+              ' Recent Purchases '
+            ),
+            ' '
+          )
+        )
+      ),
+      React.createElement(
+        'div',
+        { id: 'collectionPageDiv' },
+        React.createElement(
+          'div',
+          { id: 'collectionContent' },
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[0], alt: data.info[0].sockPic[0] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[0],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[1], alt: data.info[0].sockPic[1] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[1],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[2], alt: data.info[0].sockPic[2] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[2],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[3], alt: data.info[0].sockPic[3] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[3],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[4], alt: data.info[0].sockPic[4] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[4],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[5], alt: data.info[0].sockPic[5] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[5],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[6], alt: data.info[0].sockPic[6] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[6],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[7], alt: data.info[0].sockPic[7] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[7],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[8], alt: data.info[0].sockPic[8] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[8],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[9], alt: data.info[0].sockPic[9] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[9],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[10], alt: data.info[0].sockPic[10] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[10],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[11], alt: data.info[0].sockPic[11] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[11],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[12], alt: data.info[0].sockPic[12] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[12],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[13], alt: data.info[0].sockPic[13] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[13],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[14], alt: data.info[0].sockPic[14] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[14],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[15], alt: data.info[0].sockPic[15] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[15],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[16], alt: data.info[0].sockPic[16] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[16],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[17], alt: data.info[0].sockPic[17] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[17],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[18], alt: data.info[0].sockPic[18] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[18],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[19], alt: data.info[0].sockPic[19] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[19],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[20], alt: data.info[0].sockPic[20] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[20],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[21], alt: data.info[0].sockPic[21] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[21],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[22], alt: data.info[0].sockPic[22] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[22],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[23], alt: data.info[0].sockPic[23] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[23],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[24], alt: data.info[0].sockPic[24] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[24],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[25], alt: data.info[0].sockPic[25] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[25],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[26], alt: data.info[0].sockPic[26] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[26],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[27], alt: data.info[0].sockPic[27] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[27],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[28], alt: data.info[0].sockPic[28] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[28],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[29], alt: data.info[0].sockPic[29] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[29],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[30], alt: data.info[0].sockPic[30] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[30],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[31], alt: data.info[0].sockPic[31] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[31],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[32], alt: data.info[0].sockPic[32] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[32],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[33], alt: data.info[0].sockPic[33] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[33],
+              ' '
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'imgCollectDiv' },
+            React.createElement('img', { src: data.info[0].sockPic[34], alt: data.info[0].sockPic[34] }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.info[0].sockName[34],
+              ' '
+            )
+          )
+        )
+      )
+    ), document.querySelector("#content"));
+    var collectClass = document.querySelectorAll(".imgCollectDiv");
+    for (var i = 0; i < data.info[0].sockPic.length; i++) {
+      collectClass[i].style.display = "inline-block";
+    }
+  });
+};
+
 var ContentPage = function ContentPage(props) {
   // created content page; when clicked, user should be logged in so it takes them to search page
   return React.createElement(
     'div',
-    { id: 'loginStart' },
+    null,
     React.createElement(
       'div',
-      { className: 'taglineDiv' },
+      { id: 'loginStart' },
       React.createElement(
-        'h1',
-        null,
-        ' Socko\'s Socks! '
-      ),
-      React.createElement(
-        'h3',
-        null,
-        ' "Who needs friends when you have cool socks?" '
+        'div',
+        { className: 'taglineDiv' },
+        React.createElement(
+          'h1',
+          null,
+          ' Socko\'s Socks! '
+        ),
+        React.createElement(
+          'h3',
+          null,
+          ' "Who needs friends when you have cool socks?" '
+        )
       )
     ),
     React.createElement('br', null),
     React.createElement(
       'div',
-      { id: 'topRow' },
+      { id: 'loginInfo' },
       React.createElement(
         'div',
-        { id: 'scarySock' },
-        React.createElement('img', { className: 'sockClass', src: 'assets/img/scarySock.jpg', alt: 'Scary Socks' }),
+        { id: 'topRow' },
         React.createElement(
-          'label',
-          { htmlFor: 'scarySock' },
-          ' Scary Socks'
+          'div',
+          { id: 'scarySock' },
+          React.createElement('img', { className: 'sockClass', src: 'assets/img/scarySock.jpg', alt: 'Scary Socks' }),
+          React.createElement(
+            'label',
+            { htmlFor: 'scarySock' },
+            ' Scary Socks'
+          )
+        ),
+        React.createElement(
+          'div',
+          { id: 'crazySock' },
+          React.createElement('img', { className: 'sockClass', src: 'assets/img/crazySock.jpg', alt: 'Crazy Socks' }),
+          React.createElement(
+            'label',
+            { htmlFor: 'crazySock' },
+            ' Crazy Socks'
+          )
+        ),
+        React.createElement(
+          'div',
+          { id: 'funnySock' },
+          React.createElement('img', { className: 'sockClass', src: 'assets/img/funnySock.jpg', alt: 'Funny Socks' }),
+          React.createElement(
+            'label',
+            { htmlFor: 'funnySock' },
+            ' Funny Socks'
+          )
         )
       ),
       React.createElement(
         'div',
-        { id: 'crazySock' },
-        React.createElement('img', { className: 'sockClass', src: 'assets/img/crazySock.jpg', alt: 'Crazy Socks' }),
+        { id: 'bottomRow' },
         React.createElement(
-          'label',
-          { htmlFor: 'crazySock' },
-          ' Crazy Socks'
-        )
-      ),
-      React.createElement(
-        'div',
-        { id: 'funnySock' },
-        React.createElement('img', { className: 'sockClass', src: 'assets/img/funnySock.jpg', alt: 'Funny Socks' }),
+          'div',
+          { id: 'coolSock' },
+          React.createElement('img', { className: 'sockClass', src: 'assets/img/coolSock.jpg', alt: 'Cool Socks' }),
+          React.createElement(
+            'label',
+            { htmlFor: 'coolSock' },
+            ' Cool Socks'
+          )
+        ),
         React.createElement(
-          'label',
-          { htmlFor: 'funnySock' },
-          ' Funny Socks'
-        )
-      )
-    ),
-    React.createElement(
-      'div',
-      { id: 'bottomRow' },
-      React.createElement(
-        'div',
-        { id: 'coolSock' },
-        React.createElement('img', { className: 'sockClass', src: 'assets/img/coolSock.jpg', alt: 'Cool Socks' }),
+          'div',
+          { id: 'superSock' },
+          React.createElement('img', { className: 'sockClass', src: 'assets/img/superSock.jpg', alt: 'Super Socks' }),
+          React.createElement(
+            'label',
+            { htmlFor: 'superSock' },
+            ' Super Socks'
+          )
+        ),
         React.createElement(
-          'label',
-          { htmlFor: 'coolSock' },
-          ' Cool Socks'
-        )
-      ),
-      React.createElement(
-        'div',
-        { id: 'superSock' },
-        React.createElement('img', { className: 'sockClass', src: 'assets/img/superSock.jpg', alt: 'Super Socks' }),
+          'div',
+          { id: 'normalSock' },
+          React.createElement('img', { className: 'sockClass', src: 'assets/img/normalSock.jpg', alt: 'Normal Socks' }),
+          React.createElement(
+            'label',
+            { htmlFor: 'normalSock' },
+            ' Normal Socks'
+          )
+        ),
         React.createElement(
-          'label',
-          { htmlFor: 'superSock' },
-          ' Super Socks'
-        )
-      ),
-      React.createElement(
-        'div',
-        { id: 'normalSock' },
-        React.createElement('img', { className: 'sockClass', src: 'assets/img/normalSock.jpg', alt: 'Normal Socks' }),
+          'p',
+          null,
+          ' \xA0 '
+        ),
         React.createElement(
-          'label',
-          { htmlFor: 'normalSock' },
-          ' Normal Socks'
+          'p',
+          null,
+          ' \xA0 '
+        ),
+        React.createElement(
+          'p',
+          null,
+          ' \xA0 '
+        ),
+        React.createElement(
+          'p',
+          null,
+          ' \xA0 '
         )
       )
     )
@@ -227,7 +747,7 @@ var AccountPage = function AccountPage(props) {
   sendAjax('GET', '/getAccInfo', null, function (data) {
     ReactDOM.render(React.createElement(
       'div',
-      { id: 'accountStart' },
+      null,
       React.createElement(
         'div',
         { id: 'accountStart' },
@@ -250,79 +770,117 @@ var AccountPage = function AccountPage(props) {
         'div',
         { id: 'accountInfo' },
         React.createElement(
-          'h1',
-          null,
-          ' Account Information '
-        ),
-        React.createElement('br', null),
-        React.createElement(
-          'p',
-          null,
-          ' Username: \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 ',
-          data.info[0].username,
-          ' '
+          'h2',
+          { id: 'infoOneHeading' },
+          ' \xA0 Account Information '
         ),
         React.createElement(
-          'p',
-          null,
-          ' Purchases: \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0  ',
-          data.info[0].purchases,
-          ' '
-        ),
-        React.createElement(
-          'p',
-          null,
-          ' Funds: \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 $',
-          data.info[0].funds,
-          ' '
-        ),
-        React.createElement(
-          'form',
-          { id: 'passChangeForm',
-            name: 'passChangeForm',
-            onSubmit: handlePassChange,
-            action: '/passChange',
-            method: 'POST',
-            className: 'passForm'
-          },
-          React.createElement('input', { id: 'username', type: 'hidden', name: 'username', value: data.info[0].username }),
-          React.createElement(
-            'label',
-            { htmlFor: 'oldPass' },
-            'Old Password: '
-          ),
-          React.createElement('input', { id: 'oldPass', type: 'password', name: 'oldPass', placeholder: 'old password' }),
-          React.createElement(
-            'label',
-            { htmlFor: 'newPass' },
-            'New Password: '
-          ),
-          React.createElement('input', { id: 'newPass', type: 'password', name: 'newPass', placeholder: 'new password' }),
-          React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
+          'div',
+          { id: 'infoOne' },
           React.createElement('br', null),
-          React.createElement('input', { className: 'passForm', id: 'passSubmit', type: 'submit', value: 'Change Password' })
+          React.createElement(
+            'p',
+            null,
+            ' Username: \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 ',
+            data.info[0].username,
+            ' '
+          ),
+          React.createElement(
+            'p',
+            null,
+            ' Purchases: \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0  ',
+            data.info[0].purchases,
+            ' '
+          ),
+          React.createElement(
+            'p',
+            null,
+            ' Funds: \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 \xA0 $',
+            data.info[0].funds,
+            ' '
+          ),
+          React.createElement('br', null)
         ),
         React.createElement(
-          'form',
-          { id: 'addFundsForm',
-            name: 'addFundsForm',
-            onSubmit: handleAddFunds,
-            action: '/addFunds',
-            method: 'POST',
-            className: 'fundsForm'
-          },
+          'h2',
+          { id: 'infoTwoHeading' },
+          ' \xA0 Password Change '
+        ),
+        React.createElement(
+          'div',
+          { id: 'infoTwo' },
           React.createElement(
-            'label',
-            { htmlFor: 'fundsToAdd' },
-            'Funds to Add: '
-          ),
-          React.createElement('input', { id: 'fundsToAdd', type: 'text', name: 'fundsToAdd', placeholder: '0' }),
-          React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
-          React.createElement('br', null),
-          React.createElement('input', { className: 'fundsForm', id: 'fundsSubmit', type: 'submit', value: 'Add Funds' })
+            'form',
+            { id: 'passChangeForm',
+              name: 'passChangeForm',
+              onSubmit: handlePassChange,
+              action: '/passChange',
+              method: 'POST',
+              className: 'passForm'
+            },
+            React.createElement('input', { id: 'username', type: 'hidden', name: 'username', value: data.info[0].username }),
+            React.createElement(
+              'label',
+              { htmlFor: 'oldPass' },
+              'Old Password: '
+            ),
+            React.createElement('input', { id: 'oldPass', type: 'password', name: 'oldPass', placeholder: 'old password' }),
+            React.createElement(
+              'label',
+              { htmlFor: 'newPass' },
+              'New Password: '
+            ),
+            React.createElement('input', { id: 'newPass', type: 'password', name: 'newPass', placeholder: 'new password' }),
+            React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
+            React.createElement('br', null),
+            React.createElement('input', { className: 'passForm', id: 'passSubmit', type: 'submit', value: 'Change Password' })
+          )
+        ),
+        React.createElement(
+          'h2',
+          { id: 'infoThreeHeading' },
+          ' \xA0 Add Funds'
+        ),
+        React.createElement(
+          'div',
+          { id: 'infoThree' },
+          React.createElement(
+            'form',
+            { id: 'addFundsForm',
+              name: 'addFundsForm',
+              onSubmit: handleAddFunds,
+              action: '/addFunds',
+              method: 'POST',
+              className: 'fundsForm'
+            },
+            React.createElement(
+              'label',
+              { htmlFor: 'fundsToAdd' },
+              'Funds to Add: '
+            ),
+            React.createElement('input', { id: 'fundsToAdd', type: 'text', name: 'fundsToAdd', placeholder: '$0' }),
+            React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
+            React.createElement('br', null),
+            React.createElement('input', { className: 'fundsForm', id: 'fundsSubmit', type: 'submit', value: 'Add Funds' })
+          )
         )
       )
     ), document.querySelector("#content"));
+    var infoOne = document.querySelector("#infoOneHeading");
+    var infoTwo = document.querySelector("#infoTwoHeading");
+    var infoThree = document.querySelector("#infoThreeHeading");
+    infoOne.addEventListener('click', function (e) {
+      e.preventDefault();
+      handleInfo(e, 1);
+    });
+    infoTwo.addEventListener('click', function (e) {
+      e.preventDefault();
+      handleInfo(e, 2);
+    });
+    infoThree.addEventListener('click', function (e) {
+      e.preventDefault();
+      handleInfo(e, 3);
+    });
   });
   return React.createElement('div', null);
 };
@@ -332,7 +890,7 @@ var SearchPage = function SearchPage(props) {
   sendAjax('GET', '/getSocks', null, function (data) {
     ReactDOM.render(React.createElement(
       'div',
-      { id: 'searchPageDiv' },
+      null,
       React.createElement(
         'div',
         { id: 'searchStart' },
@@ -372,365 +930,369 @@ var SearchPage = function SearchPage(props) {
       ),
       React.createElement(
         'div',
-        { id: 'displayContent' },
+        { id: 'searchPageDiv' },
         React.createElement(
           'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[0].picture, alt: data.socks[0].name }),
+          { id: 'displayContent' },
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[0].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[1].picture, alt: data.socks[1].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[0].picture, alt: data.socks[0].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[0].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[1].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[2].picture, alt: data.socks[2].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[1].picture, alt: data.socks[1].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[1].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[2].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[3].picture, alt: data.socks[3].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[2].picture, alt: data.socks[2].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[2].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[3].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[4].picture, alt: data.socks[4].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[3].picture, alt: data.socks[3].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[3].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[4].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[5].picture, alt: data.socks[5].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[4].picture, alt: data.socks[4].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[4].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[5].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[6].picture, alt: data.socks[6].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[5].picture, alt: data.socks[5].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[5].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[6].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[7].picture, alt: data.socks[7].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[6].picture, alt: data.socks[6].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[6].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[7].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[8].picture, alt: data.socks[8].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[7].picture, alt: data.socks[7].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[7].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[8].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[9].picture, alt: data.socks[9].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[8].picture, alt: data.socks[8].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[8].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[9].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[10].picture, alt: data.socks[10].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[9].picture, alt: data.socks[9].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[9].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[10].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[11].picture, alt: data.socks[11].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[10].picture, alt: data.socks[10].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[10].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[11].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[12].picture, alt: data.socks[12].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[11].picture, alt: data.socks[11].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[11].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[12].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[13].picture, alt: data.socks[13].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[12].picture, alt: data.socks[12].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[12].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[13].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[14].picture, alt: data.socks[14].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[13].picture, alt: data.socks[13].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[13].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[14].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[15].picture, alt: data.socks[15].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[14].picture, alt: data.socks[14].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[14].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[15].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[16].picture, alt: data.socks[16].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[15].picture, alt: data.socks[15].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[15].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[16].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[17].picture, alt: data.socks[17].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[16].picture, alt: data.socks[16].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[16].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[17].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[18].picture, alt: data.socks[18].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[17].picture, alt: data.socks[17].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[17].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[18].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[19].picture, alt: data.socks[19].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[18].picture, alt: data.socks[18].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[18].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[19].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[20].picture, alt: data.socks[20].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[19].picture, alt: data.socks[19].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[19].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[20].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[21].picture, alt: data.socks[21].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[20].picture, alt: data.socks[20].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[20].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[21].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[22].picture, alt: data.socks[22].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[21].picture, alt: data.socks[21].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[21].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[22].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[23].picture, alt: data.socks[23].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[22].picture, alt: data.socks[22].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[22].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[23].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[24].picture, alt: data.socks[24].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[23].picture, alt: data.socks[23].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[23].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[24].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[25].picture, alt: data.socks[25].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[24].picture, alt: data.socks[24].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[24].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[25].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[26].picture, alt: data.socks[26].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[25].picture, alt: data.socks[25].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[25].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[26].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[27].picture, alt: data.socks[27].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[26].picture, alt: data.socks[26].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[26].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[27].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[28].picture, alt: data.socks[28].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[27].picture, alt: data.socks[27].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[27].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[28].name,
-            ' '
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'imgContentDiv' },
-          React.createElement('img', { src: data.socks[29].picture, alt: data.socks[29].name }),
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[28].picture, alt: data.socks[28].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[28].name,
+              ' '
+            )
+          ),
           React.createElement(
-            'h5',
-            null,
-            ' ',
-            data.socks[29].name,
-            ' '
+            'div',
+            { className: 'imgContentDiv' },
+            React.createElement('img', { src: data.socks[29].picture, alt: data.socks[29].name }),
+            React.createElement(
+              'h5',
+              null,
+              ' ',
+              data.socks[29].name,
+              ' '
+            )
           )
         )
       ),
@@ -756,42 +1318,38 @@ var SearchPage = function SearchPage(props) {
   });
   return React.createElement(
     'div',
-    { id: 'searchPageDiv' },
+    { id: 'searchStart' },
     React.createElement(
       'div',
-      { id: 'searchStart' },
+      { className: 'taglineDiv' },
       React.createElement(
-        'div',
-        { className: 'taglineDiv' },
-        React.createElement(
-          'h1',
-          null,
-          ' Socko\'s Socks! '
-        ),
-        React.createElement(
-          'h3',
-          null,
-          ' "Who needs friends when you have cool socks?" '
-        )
+        'h1',
+        null,
+        ' Socko\'s Socks! '
       ),
       React.createElement(
-        'div',
-        { id: 'searchInfo' },
-        React.createElement(
-          'form',
-          { id: 'searchForm',
-            name: 'searchForm',
-            onInput: handleSearchInput,
-            onSubmit: handleSearchSubmit,
-            action: '/searchSocks',
-            method: 'GET',
-            className: 'searchForm'
-          },
-          React.createElement('input', { id: 'searchBar', type: 'text', name: 'searchBar', placeholder: 'Search...' }),
-          React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
-          React.createElement('input', { id: 'searchProps', type: 'hidden', name: 'searchProps', value: props }),
-          React.createElement('input', { type: 'image', src: 'assets/img/searchButton.png', alt: 'searchButton', className: 'searchSubmit' })
-        )
+        'h3',
+        null,
+        ' "Who needs friends when you have cool socks?" '
+      )
+    ),
+    React.createElement(
+      'div',
+      { id: 'searchInfo' },
+      React.createElement(
+        'form',
+        { id: 'searchForm',
+          name: 'searchForm',
+          onInput: handleSearchInput,
+          onSubmit: handleSearchSubmit,
+          action: '/searchSocks',
+          method: 'GET',
+          className: 'searchForm'
+        },
+        React.createElement('input', { id: 'searchBar', type: 'text', name: 'searchBar', placeholder: 'Search...' }),
+        React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
+        React.createElement('input', { id: 'searchProps', type: 'hidden', name: 'searchProps', value: props }),
+        React.createElement('input', { type: 'image', src: 'assets/img/searchButton.png', alt: 'searchButton', className: 'searchSubmit' })
       )
     )
   );
@@ -864,98 +1422,136 @@ var BuyPage = function BuyPage(props, name, price, category, picture) {
         React.createElement('br', null),
         React.createElement(
           'div',
-          { id: 'buyInfo' },
-          React.createElement('img', { src: picture, alt: name }),
-          React.createElement(
-            'h3',
-            null,
-            ' Name: ',
-            name,
-            ' '
-          ),
-          React.createElement(
-            'h3',
-            null,
-            ' Category: ',
-            category,
-            ' '
-          ),
-          React.createElement(
-            'h3',
-            null,
-            ' Price: ',
-            price,
-            ' '
-          ),
-          React.createElement(
-            'form',
-            { id: 'buySocksForm',
-              name: 'buySocksForm',
-              onSubmit: handleBuySocks,
-              action: '/buySocks',
-              method: 'POST',
-              className: 'buyForm'
-            },
-            React.createElement('input', { id: 'socksBought', type: 'hidden', name: 'socksBought', value: name }),
-            React.createElement('input', { id: 'socksPrice', type: 'hidden', name: 'socksPrice', value: price }),
-            React.createElement('input', { id: 'socksCategory', type: 'hidden', name: 'socksCategory', value: category }),
-            React.createElement('input', { id: 'socksPicture', type: 'hidden', name: 'socksPicture', value: picture }),
-            React.createElement('input', { id: 'socksProps', type: 'hidden', name: 'socksProps', value: props }),
-            React.createElement('input', { id: 'currFunds', type: 'hidden', name: 'currFunds', value: data.info[0].funds }),
-            React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
-            React.createElement('input', { className: 'buyForm', type: 'submit', value: 'Buy Now!' })
-          )
-        ),
-        React.createElement(
-          'div',
-          { id: 'similarSocks' },
+          { id: 'buyPage' },
           React.createElement(
             'div',
-            { id: 'recommend' },
-            React.createElement(
-              'h4',
-              null,
-              ' Based on your selection, we also recommend '
-            ),
-            React.createElement('br', null)
-          ),
-          React.createElement(
-            'div',
-            { id: 'socksR' },
+            { id: 'buyInfo' },
             React.createElement(
               'div',
-              { id: 'sock1' },
-              React.createElement('img', { src: pic1, alt: pic1Name }),
+              { id: 'sockInfo' },
+              React.createElement('img', { src: picture, alt: name }),
               React.createElement(
-                'h5',
-                null,
-                ' ',
-                pic1Name,
-                ' '
+                'h3',
+                { id: 'sockCategory' },
+                ' Our featured product '
               )
             ),
             React.createElement(
               'div',
-              { id: 'sock2' },
-              React.createElement('img', { src: pic2, alt: pic2Name }),
+              { id: 'sockBuy' },
               React.createElement(
-                'h5',
+                'h3',
+                { id: 'sockName' },
+                ' \xA0 ',
+                name,
+                ':  '
+              ),
+              React.createElement(
+                'h3',
+                { id: 'sockPrice' },
+                ' \xA0 $',
+                price,
+                '  '
+              ),
+              React.createElement(
+                'h6',
                 null,
-                ' ',
-                pic2Name,
+                ' Category: ',
+                category,
                 ' '
-              )
+              ),
+              React.createElement(
+                'h6',
+                null,
+                ' Plus shipping and handling '
+              ),
+              React.createElement(
+                'h6',
+                null,
+                ' Takes 5-7 business days '
+              ),
+              React.createElement(
+                'h6',
+                null,
+                ' One size only '
+              ),
+              React.createElement(
+                'h6',
+                null,
+                ' Quantity: 1 '
+              ),
+              React.createElement(
+                'form',
+                { id: 'buySocksForm',
+                  name: 'buySocksForm',
+                  onSubmit: handleBuySocks,
+                  action: '/buySocks',
+                  method: 'POST',
+                  className: 'buyForm'
+                },
+                React.createElement('input', { id: 'socksBought', type: 'hidden', name: 'socksBought', value: name }),
+                React.createElement('input', { id: 'socksPrice', type: 'hidden', name: 'socksPrice', value: price }),
+                React.createElement('input', { id: 'socksCategory', type: 'hidden', name: 'socksCategory', value: category }),
+                React.createElement('input', { id: 'socksPicture', type: 'hidden', name: 'socksPicture', value: picture }),
+                React.createElement('input', { id: 'socksProps', type: 'hidden', name: 'socksProps', value: props }),
+                React.createElement('input', { id: 'currFunds', type: 'hidden', name: 'currFunds', value: data.info[0].funds }),
+                React.createElement('input', { type: 'hidden', name: '_csrf', value: props.csrf }),
+                React.createElement('input', { className: 'buyForm', type: 'submit', value: 'Buy Now!' })
+              ),
+              React.createElement('br', null)
+            )
+          ),
+          React.createElement(
+            'div',
+            { id: 'similarSocks' },
+            React.createElement(
+              'div',
+              { id: 'recommend' },
+              React.createElement(
+                'h4',
+                null,
+                ' Also Recommended: '
+              ),
+              React.createElement('br', null)
             ),
             React.createElement(
               'div',
-              { id: 'sock3' },
-              React.createElement('img', { src: pic3, alt: pic3Name }),
+              { id: 'socksR' },
               React.createElement(
-                'h5',
-                null,
-                ' ',
-                pic3Name,
-                ' '
+                'div',
+                { id: 'sock1' },
+                React.createElement('img', { src: pic1, alt: pic1Name }),
+                React.createElement(
+                  'h5',
+                  null,
+                  ' ',
+                  pic1Name,
+                  ' '
+                )
+              ),
+              React.createElement(
+                'div',
+                { id: 'sock2' },
+                React.createElement('img', { src: pic2, alt: pic2Name }),
+                React.createElement(
+                  'h5',
+                  null,
+                  ' ',
+                  pic2Name,
+                  ' '
+                )
+              ),
+              React.createElement(
+                'div',
+                { id: 'sock3' },
+                React.createElement('img', { src: pic3, alt: pic3Name }),
+                React.createElement(
+                  'h5',
+                  null,
+                  ' ',
+                  pic3Name,
+                  ' '
+                )
               )
             )
           )
@@ -1002,6 +1598,7 @@ var ConfirmPage = function ConfirmPage(props, name, price, category, picture) {
     React.createElement(
       'div',
       { id: 'confirmInfo' },
+      React.createElement('br', null),
       React.createElement(
         'h2',
         null,
@@ -1040,6 +1637,11 @@ var ConfirmPage = function ConfirmPage(props, name, price, category, picture) {
         { id: 'backBrowsingTab' },
         React.createElement('img', { src: 'assets/img/leftArrow.png', alt: 'toSearch' }),
         React.createElement(
+          'p',
+          null,
+          ' \xA0 '
+        ),
+        React.createElement(
           'a',
           { href: 'search' },
           ' ',
@@ -1056,6 +1658,11 @@ var ConfirmPage = function ConfirmPage(props, name, price, category, picture) {
         { id: 'myCollectionTab' },
         React.createElement('img', { src: 'assets/img/leftArrow.png', alt: 'toCollection' }),
         React.createElement(
+          'p',
+          null,
+          ' \xA0 '
+        ),
+        React.createElement(
           'a',
           { href: 'collection' },
           ' ',
@@ -1066,6 +1673,11 @@ var ConfirmPage = function ConfirmPage(props, name, price, category, picture) {
           ),
           ' '
         )
+      ),
+      React.createElement(
+        'p',
+        null,
+        ' \xA0 '
       )
     )
   ), document.querySelector("#content"));
@@ -1073,6 +1685,57 @@ var ConfirmPage = function ConfirmPage(props, name, price, category, picture) {
 };
 
 var CollectionPage = function CollectionPage(props) {
+  // create search page to load socks from database; if sock is clicked or searched for, load buy page with correct info.
+  sendAjax('GET', '/getAccInfo', null, function (data) {
+    console.log(data.info[0].sockPic.length);
+    if (data.info[0].sockPic.length === 0) {
+      ReactDOM.render(React.createElement(
+        'div',
+        { id: 'collectionStart' },
+        React.createElement(
+          'div',
+          { className: 'taglineDiv' },
+          React.createElement(
+            'h1',
+            null,
+            ' Socko\'s Socks! '
+          ),
+          React.createElement(
+            'h3',
+            null,
+            ' "Who needs friends when you have cool socks?" '
+          )
+        ),
+        React.createElement(
+          'div',
+          { id: 'collectionInfo' },
+          React.createElement(
+            'h3',
+            null,
+            ' ',
+            React.createElement(
+              'b',
+              null,
+              ' Recent Purchases '
+            ),
+            ' '
+          )
+        ),
+        React.createElement(
+          'div',
+          { id: 'collectionPageDiv' },
+          React.createElement('br', null),
+          React.createElement(
+            'h3',
+            null,
+            ' No Socks Yet :( '
+          )
+        )
+      ), document.querySelector("#content"));
+    } else {
+      createInvObject();
+    }
+  });
   return React.createElement(
     'div',
     { id: 'collectionStart' },
@@ -1090,14 +1753,19 @@ var CollectionPage = function CollectionPage(props) {
         ' "Who needs friends when you have cool socks?" '
       )
     ),
-    React.createElement('br', null),
     React.createElement(
       'div',
-      null,
+      { id: 'collectionInfo' },
       React.createElement(
-        'h2',
+        'h3',
         null,
-        ' Collection Page TBD '
+        ' ',
+        React.createElement(
+          'b',
+          null,
+          ' Recent Purchases '
+        ),
+        ' '
       )
     )
   );

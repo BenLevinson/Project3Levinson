@@ -30,15 +30,18 @@ const handleSignup = (e) => { // handle signup of users
   return false;
 };
 
-const ContentPage = (props) => { // create home page for users to see when not logged in; clicking a box prompts them to login
+const ContentPage = (props) => { // created content page; when clicked, user should be logged in so it takes them to search page
   return (
-    <div id="loginStart">
-      <div className="taglineDiv">
-        <h1> Socko's Socks! </h1>
-        <h3> "Who needs friends when you have cool socks?" </h3>
+    <div>
+      <div id="loginStart">
+        <div className="taglineDiv">
+          <h1> Socko's Socks! </h1>
+          <h3> "Who needs friends when you have cool socks?" </h3>
+        </div>
       </div>
       <br/>
-      <div id="topRow"> 
+      <div id="loginInfo">
+        <div id="topRow"> 
         <div id="scarySock">
           <a href="/search"> <img className="sockClass" src="assets/img/scarySock.jpg" alt="Scary Socks"/> </a>
           <label htmlFor="scarySock"> Scary Socks</label>
@@ -65,6 +68,11 @@ const ContentPage = (props) => { // create home page for users to see when not l
           <a href="/search"> <img className="sockClass" src="assets/img/normalSock.jpg" alt="Normal Socks"/> </a>
           <label htmlFor="normalSock"> Normal Socks</label>
         </div>
+          <p> &nbsp; </p>
+          <p> &nbsp; </p>
+          <p> &nbsp; </p>
+          <p> &nbsp; </p>
+        </div>
       </div>
     </div>
   );
@@ -73,16 +81,17 @@ const ContentPage = (props) => { // create home page for users to see when not l
 const LoginWindow = (props) => { // creates login page for users; prompted to come here before anything else
   return (
     <div>
-        <div className="taglineDiv">
-          <h1> Socko's Socks! </h1>
-          <h3> "Who needs friends when you have cool socks?" </h3>
-        </div>
+      <div className="taglineDiv">
+        <h1> Socko's Socks! </h1>
+        <h3> "Who needs friends when you have cool socks?" </h3>
+      </div>
+      <div id="loginW">
         <form id="loginForm" 
-          name="loginForm"
-          onSubmit={handleLogin}
-          action="/login"
-          method="POST"
-          className="mainForm"
+        name="loginForm"
+        onSubmit={handleLogin}
+        action="/login"
+        method="POST"
+        className="mainForm"
         >
         <label htmlFor="username">Username: </label>
         <input id="user" type="text" name="username" placeholder="username"/>
@@ -90,7 +99,8 @@ const LoginWindow = (props) => { // creates login page for users; prompted to co
         <input id="pass" type="password" name="pass" placeholder="password"/>
         <input type="hidden" name="_csrf" value={props.csrf} />
         <input className="formSubmit" type="submit" value="Sign In" />
-      </form>
+        </form>
+      </div>
   </div>
   );  
 };
@@ -102,22 +112,24 @@ const SignupWindow = (props) => { // creates signup page for users
           <h1> Socko's Socks! </h1>
           <h3> "Who needs friends when you have cool socks?" </h3>
         </div>
-        <form id="signupForm" 
+        <div id="signupW">
+          <form id="signupForm" 
           name="signupForm"
           onSubmit={handleSignup}
           action="/signup"
           method="POST"
           className="mainForm"
-        >
-        <label htmlFor="username">Username: </label>
-        <input id="user" type="text" name="username" placeholder="username"/>
-        <label htmlFor="pass">Password: </label>
-        <input id="pass" type="password" name="pass" placeholder="password"/>
-        <label htmlFor="pass2">Password: </label>
-        <input id="pass2" type="password" name="pass2" placeholder="retype password"/>
-        <input type="hidden" name="_csrf" value={props.csrf} />
-        <input className="formSubmit" type="submit" value="Sign Up" />
-        </form>
+          >
+          <label htmlFor="username">Username: </label>
+          <input id="user" type="text" name="username" placeholder="username"/>
+          <label htmlFor="pass">Password: </label>
+          <input id="pass" type="password" name="pass" placeholder="password"/>
+          <label htmlFor="pass2">Confirm: </label>
+          <input id="pass2" type="password" name="pass2" placeholder="retype password"/>
+          <input type="hidden" name="_csrf" value={props.csrf} />
+          <input className="formSubmit" type="submit" value="Sign Up" />
+          </form>
+        </div>
     </div>
   );  
 };

@@ -122,40 +122,232 @@ const handleBuySocks = (e) => { // handles when user wants to buy socks; make su
   return false;
 };
 
+const handleInfo = (e, num) => {
+  console.log(num);
+  switch(num) {
+    case 1: 
+      $("#infoOne").animate({height: 'toggle'}, 350);
+      document.querySelector("#infoOne").style.display = "block";
+      break;
+    case 2: 
+      $("#infoTwo").animate({height: 'toggle'}, 350);
+      document.querySelector("#infoTwo").style.display = "block";
+      break;
+    case 3: 
+      $("#infoThree").animate({height: 'toggle'}, 350);
+      document.querySelector("#infoThree").style.display = "block";
+      break;    
+    }
+};
+
+const createInvObject = () => {
+  sendAjax('GET', '/getAccInfo', null, (data) => {
+    ReactDOM.render(
+      <div>
+        <div id="collectionStart">
+            <div className="taglineDiv">
+                <h1> Socko's Socks! </h1>
+                <h3> "Who needs friends when you have cool socks?" </h3>
+            </div>
+            <div id="collectionInfo">
+                <h3> <b> Recent Purchases </b> </h3>
+            </div>
+        </div>
+        <div id="collectionPageDiv">
+            <div id="collectionContent"> 
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[0]} alt={data.info[0].sockPic[0]} />
+                    <h5> {data.info[0].sockName[0]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[1]} alt={data.info[0].sockPic[1]} />
+                    <h5> {data.info[0].sockName[1]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[2]} alt={data.info[0].sockPic[2]} />
+                    <h5> {data.info[0].sockName[2]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[3]} alt={data.info[0].sockPic[3]} />
+                    <h5> {data.info[0].sockName[3]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[4]} alt={data.info[0].sockPic[4]} />
+                    <h5> {data.info[0].sockName[4]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[5]} alt={data.info[0].sockPic[5]} />
+                    <h5> {data.info[0].sockName[5]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[6]} alt={data.info[0].sockPic[6]} />
+                    <h5> {data.info[0].sockName[6]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[7]} alt={data.info[0].sockPic[7]} />
+                    <h5> {data.info[0].sockName[7]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[8]} alt={data.info[0].sockPic[8]} />
+                    <h5> {data.info[0].sockName[8]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[9]} alt={data.info[0].sockPic[9]} />
+                    <h5> {data.info[0].sockName[9]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[10]} alt={data.info[0].sockPic[10]} />
+                    <h5> {data.info[0].sockName[10]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[11]} alt={data.info[0].sockPic[11]} />
+                    <h5> {data.info[0].sockName[11]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[12]} alt={data.info[0].sockPic[12]} />
+                    <h5> {data.info[0].sockName[12]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[13]} alt={data.info[0].sockPic[13]} />
+                    <h5> {data.info[0].sockName[13]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[14]} alt={data.info[0].sockPic[14]} />
+                    <h5> {data.info[0].sockName[14]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[15]} alt={data.info[0].sockPic[15]} />
+                    <h5> {data.info[0].sockName[15]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[16]} alt={data.info[0].sockPic[16]} />
+                    <h5> {data.info[0].sockName[16]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[17]} alt={data.info[0].sockPic[17]} />
+                    <h5> {data.info[0].sockName[17]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[18]} alt={data.info[0].sockPic[18]} />
+                    <h5> {data.info[0].sockName[18]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[19]} alt={data.info[0].sockPic[19]} />
+                    <h5> {data.info[0].sockName[19]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[20]} alt={data.info[0].sockPic[20]} />
+                    <h5> {data.info[0].sockName[20]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[21]} alt={data.info[0].sockPic[21]} />
+                    <h5> {data.info[0].sockName[21]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[22]} alt={data.info[0].sockPic[22]} />
+                    <h5> {data.info[0].sockName[22]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[23]} alt={data.info[0].sockPic[23]} />
+                    <h5> {data.info[0].sockName[23]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[24]} alt={data.info[0].sockPic[24]} />
+                    <h5> {data.info[0].sockName[24]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[25]} alt={data.info[0].sockPic[25]} />
+                    <h5> {data.info[0].sockName[25]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[26]} alt={data.info[0].sockPic[26]} />
+                    <h5> {data.info[0].sockName[26]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[27]} alt={data.info[0].sockPic[27]} />
+                    <h5> {data.info[0].sockName[27]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[28]} alt={data.info[0].sockPic[28]} />
+                    <h5> {data.info[0].sockName[28]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[29]} alt={data.info[0].sockPic[29]} />
+                    <h5> {data.info[0].sockName[29]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[30]} alt={data.info[0].sockPic[30]} />
+                    <h5> {data.info[0].sockName[30]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[31]} alt={data.info[0].sockPic[31]} />
+                    <h5> {data.info[0].sockName[31]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[32]} alt={data.info[0].sockPic[32]} />
+                    <h5> {data.info[0].sockName[32]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[33]} alt={data.info[0].sockPic[33]} />
+                    <h5> {data.info[0].sockName[33]} </h5>
+                </div>
+                <div className="imgCollectDiv">
+                    <img src={data.info[0].sockPic[34]} alt={data.info[0].sockPic[34]} />
+                    <h5> {data.info[0].sockName[34]} </h5>
+                </div>
+            </div>
+        </div>
+      </div>, document.querySelector("#content")
+    );
+    const collectClass = document.querySelectorAll(".imgCollectDiv");
+    for(let i = 0; i < data.info[0].sockPic.length; i++) {
+        collectClass[i].style.display = "inline-block";
+    }
+  });
+};
+
 const ContentPage = (props) => { // created content page; when clicked, user should be logged in so it takes them to search page
   return (
-    <div id="loginStart">
-     <div className="taglineDiv">
-        <h1> Socko's Socks! </h1>
-        <h3> "Who needs friends when you have cool socks?" </h3>
+    <div>
+      <div id="loginStart">
+        <div className="taglineDiv">
+          <h1> Socko's Socks! </h1>
+          <h3> "Who needs friends when you have cool socks?" </h3>
+        </div>
       </div>
       <br/>
-       <div id="topRow"> 
-        <div id="scarySock">
-          <img className="sockClass" src="assets/img/scarySock.jpg" alt="Scary Socks"/>
-          <label htmlFor="scarySock"> Scary Socks</label>
+      <div id="loginInfo">
+        <div id="topRow"> 
+          <div id="scarySock">
+            <img className="sockClass" src="assets/img/scarySock.jpg" alt="Scary Socks"/>
+            <label htmlFor="scarySock"> Scary Socks</label>
+          </div>
+          <div id="crazySock">
+            <img className="sockClass" src="assets/img/crazySock.jpg" alt="Crazy Socks"/>
+            <label htmlFor="crazySock"> Crazy Socks</label>
+          </div>
+          <div id="funnySock">
+            <img className="sockClass" src="assets/img/funnySock.jpg" alt="Funny Socks"/>
+            <label htmlFor="funnySock"> Funny Socks</label>
+          </div>
         </div>
-        <div id="crazySock">
-          <img className="sockClass" src="assets/img/crazySock.jpg" alt="Crazy Socks"/>
-          <label htmlFor="crazySock"> Crazy Socks</label>
-        </div>
-        <div id="funnySock">
-          <img className="sockClass" src="assets/img/funnySock.jpg" alt="Funny Socks"/>
-          <label htmlFor="funnySock"> Funny Socks</label>
-        </div>
-      </div>
-      <div id="bottomRow">
-        <div id="coolSock">
-          <img className="sockClass" src="assets/img/coolSock.jpg" alt="Cool Socks"/>
-          <label htmlFor="coolSock"> Cool Socks</label>
-        </div>
-        <div id="superSock">
-          <img className="sockClass" src="assets/img/superSock.jpg" alt="Super Socks"/>
-          <label htmlFor="superSock"> Super Socks</label>
-        </div>
-        <div id="normalSock">
-          <img className="sockClass" src="assets/img/normalSock.jpg" alt="Normal Socks"/>
-          <label htmlFor="normalSock"> Normal Socks</label>
+        <div id="bottomRow">
+          <div id="coolSock">
+            <img className="sockClass" src="assets/img/coolSock.jpg" alt="Cool Socks"/>
+            <label htmlFor="coolSock"> Cool Socks</label>
+          </div>
+          <div id="superSock">
+            <img className="sockClass" src="assets/img/superSock.jpg" alt="Super Socks"/>
+            <label htmlFor="superSock"> Super Socks</label>
+          </div>
+          <div id="normalSock">
+            <img className="sockClass" src="assets/img/normalSock.jpg" alt="Normal Socks"/>
+            <label htmlFor="normalSock"> Normal Socks</label>
+          </div>
+          <p> &nbsp; </p>
+          <p> &nbsp; </p>
+          <p> &nbsp; </p>
+          <p> &nbsp; </p>
         </div>
       </div>
     </div>
@@ -165,7 +357,7 @@ const ContentPage = (props) => { // created content page; when clicked, user sho
 const AccountPage = (props) => { // create account page and load in account info from account database; add funds and change password when prompted
   sendAjax('GET', '/getAccInfo', null, (data) => {
     ReactDOM.render(
-      <div id="accountStart">
+      <div>
         <div id="accountStart">
           <div className="taglineDiv">
             <h1> Socko's Socks! </h1>
@@ -173,43 +365,67 @@ const AccountPage = (props) => { // create account page and load in account info
           </div>
         </div>
         <div id="accountInfo">
-          <h1> Account Information </h1>
-          <br/>
-          <p> Username: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {data.info[0].username} </p>
-          <p> Purchases: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {data.info[0].purchases} </p>
-          <p> Funds: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${data.info[0].funds} </p>
-          <form id="passChangeForm" 
-            name="passChangeForm"
-            onSubmit={handlePassChange}
-            action="/passChange"
-            method="POST"
-            className="passForm"
-          >
-          <input id="username" type="hidden" name="username" value={data.info[0].username}/>
-          <label htmlFor="oldPass">Old Password: </label>
-          <input id="oldPass" type="password" name="oldPass" placeholder="old password"/>
-          <label htmlFor="newPass">New Password: </label>
-          <input id="newPass" type="password" name="newPass" placeholder="new password"/>
-          <input type="hidden" name="_csrf" value={props.csrf} />
-          <br/>
-          <input className="passForm" id="passSubmit" type="submit" value="Change Password" />
-          </form>
-          <form id="addFundsForm" 
-            name="addFundsForm"
-            onSubmit={handleAddFunds}
-            action="/addFunds"
-            method="POST"
-            className="fundsForm"
-          >
-          <label htmlFor="fundsToAdd">Funds to Add: </label>
-          <input id="fundsToAdd" type="text" name="fundsToAdd" placeholder="0"/>
-          <input type="hidden" name="_csrf" value={props.csrf} />
-          <br/>
-          <input className="fundsForm" id="fundsSubmit" type="submit" value="Add Funds" />
-          </form>
+          <h2 id="infoOneHeading"> &nbsp; Account Information </h2>
+          <div id="infoOne">
+            <br/>
+            <p> Username: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {data.info[0].username} </p>
+            <p> Purchases: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {data.info[0].purchases} </p>
+            <p> Funds: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${data.info[0].funds} </p>
+            <br/>
+          </div>
+          <h2 id="infoTwoHeading"> &nbsp; Password Change </h2>
+          <div id="infoTwo">
+            <form id="passChangeForm" 
+              name="passChangeForm"
+              onSubmit={handlePassChange}
+              action="/passChange"
+              method="POST"
+              className="passForm"
+            >
+            <input id="username" type="hidden" name="username" value={data.info[0].username}/>
+            <label htmlFor="oldPass">Old Password: </label>
+            <input id="oldPass" type="password" name="oldPass" placeholder="old password"/>
+            <label htmlFor="newPass">New Password: </label>
+            <input id="newPass" type="password" name="newPass" placeholder="new password"/>
+            <input type="hidden" name="_csrf" value={props.csrf} />
+            <br/>
+            <input className="passForm" id="passSubmit" type="submit" value="Change Password" />
+            </form>
+          </div>
+          <h2 id="infoThreeHeading"> &nbsp; Add Funds</h2>
+          <div id="infoThree">
+            <form id="addFundsForm" 
+              name="addFundsForm"
+              onSubmit={handleAddFunds}
+              action="/addFunds"
+              method="POST"
+              className="fundsForm"
+            >
+            <label htmlFor="fundsToAdd">Funds to Add: </label>
+            <input id="fundsToAdd" type="text" name="fundsToAdd" placeholder="$0"/>
+            <input type="hidden" name="_csrf" value={props.csrf} />
+            <br/>
+            <input className="fundsForm" id="fundsSubmit" type="submit" value="Add Funds" />
+            </form>
+          </div>
         </div>
       </div>, document.querySelector("#content")
     );
+    const infoOne = document.querySelector("#infoOneHeading");
+    const infoTwo = document.querySelector("#infoTwoHeading");
+    const infoThree = document.querySelector("#infoThreeHeading");
+    infoOne.addEventListener('click', (e) => {
+        e.preventDefault();
+        handleInfo(e, 1);
+    });
+    infoTwo.addEventListener('click', (e) => {
+        e.preventDefault();
+        handleInfo(e, 2);
+    });
+    infoThree.addEventListener('click', (e) => {
+        e.preventDefault();
+        handleInfo(e, 3);
+    });
   });
   return (
     <div>
@@ -221,148 +437,150 @@ const SearchPage = (props) => {
   // create search page to load socks from database; if sock is clicked or searched for, load buy page with correct info.
   sendAjax('GET', '/getSocks', null, (data) => {
     ReactDOM.render(
-      <div id="searchPageDiv">
-        <div id="searchStart">
-          <div className="taglineDiv">
-            <h1> Socko's Socks! </h1>
-            <h3> "Who needs friends when you have cool socks?" </h3>
-          </div>
-          <div id="searchInfo">
-            <form id="searchForm" 
-            name="searchForm"
-            onInput={handleSearchInput}
-            onSubmit={handleSearchSubmit}
-            action="/searchSocks"
-            method="GET"
-            className="searchForm"
-            >
-            <input id="searchBar" type="text" name="searchBar" placeholder="Search..."/>
-            <input type="hidden" name="_csrf" value={props.csrf} />
-            <input id="searchProps" type="hidden" name="searchProps" value={props} />
-            <input type="image" src="assets/img/searchButton.png" alt="searchButton" className="searchSubmit" />
-            </form>
-          </div>
-        </div>
-        <div id="displayContent"> 
-            <div className="imgContentDiv">
-              <img src={data.socks[0].picture} alt={data.socks[0].name} />
-              <h5> {data.socks[0].name} </h5>
+        <div>
+            <div id="searchStart">
+              <div className="taglineDiv">
+                <h1> Socko's Socks! </h1>
+                <h3> "Who needs friends when you have cool socks?" </h3>
+              </div>
+              <div id="searchInfo">
+                <form id="searchForm" 
+                name="searchForm"
+                onInput={handleSearchInput}
+                onSubmit={handleSearchSubmit}
+                action="/searchSocks"
+                method="GET"
+                className="searchForm"
+                >
+                <input id="searchBar" type="text" name="searchBar" placeholder="Search..."/>
+                <input type="hidden" name="_csrf" value={props.csrf} />
+                <input id="searchProps" type="hidden" name="searchProps" value={props} />
+                <input type="image" src="assets/img/searchButton.png" alt="searchButton" className="searchSubmit" />
+                </form>
+              </div>
             </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[1].picture} alt={data.socks[1].name} />
-              <h5> {data.socks[1].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[2].picture} alt={data.socks[2].name} />
-              <h5> {data.socks[2].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[3].picture} alt={data.socks[3].name} />
-              <h5> {data.socks[3].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[4].picture} alt={data.socks[4].name} />
-              <h5> {data.socks[4].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[5].picture} alt={data.socks[5].name} />
-              <h5> {data.socks[5].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[6].picture} alt={data.socks[6].name} />
-              <h5> {data.socks[6].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[7].picture} alt={data.socks[7].name} />
-              <h5> {data.socks[7].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[8].picture} alt={data.socks[8].name} />
-              <h5> {data.socks[8].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[9].picture} alt={data.socks[9].name} />
-              <h5> {data.socks[9].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[10].picture} alt={data.socks[10].name} />
-              <h5> {data.socks[10].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[11].picture} alt={data.socks[11].name} />
-              <h5> {data.socks[11].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[12].picture} alt={data.socks[12].name} />
-              <h5> {data.socks[12].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[13].picture} alt={data.socks[13].name} />
-              <h5> {data.socks[13].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[14].picture} alt={data.socks[14].name} />
-              <h5> {data.socks[14].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[15].picture} alt={data.socks[15].name} />
-              <h5> {data.socks[15].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[16].picture} alt={data.socks[16].name} />
-              <h5> {data.socks[16].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[17].picture} alt={data.socks[17].name} />
-              <h5> {data.socks[17].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[18].picture} alt={data.socks[18].name} />
-              <h5> {data.socks[18].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[19].picture} alt={data.socks[19].name} />
-              <h5> {data.socks[19].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[20].picture} alt={data.socks[20].name} />
-              <h5> {data.socks[20].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[21].picture} alt={data.socks[21].name} />
-              <h5> {data.socks[21].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[22].picture} alt={data.socks[22].name} />
-              <h5> {data.socks[22].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[23].picture} alt={data.socks[23].name} />
-              <h5> {data.socks[23].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[24].picture} alt={data.socks[24].name} />
-              <h5> {data.socks[24].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[25].picture} alt={data.socks[25].name} />
-              <h5> {data.socks[25].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[26].picture} alt={data.socks[26].name} />
-              <h5> {data.socks[26].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[27].picture} alt={data.socks[27].name} />
-              <h5> {data.socks[27].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[28].picture} alt={data.socks[28].name} />
-              <h5> {data.socks[28].name} </h5>
-            </div>
-            <div className="imgContentDiv">
-              <img src={data.socks[29].picture} alt={data.socks[29].name} />
-              <h5> {data.socks[29].name} </h5>
+        <div id="searchPageDiv">
+            <div id="displayContent"> 
+                <div className="imgContentDiv">
+                  <img src={data.socks[0].picture} alt={data.socks[0].name} />
+                  <h5> {data.socks[0].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[1].picture} alt={data.socks[1].name} />
+                  <h5> {data.socks[1].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[2].picture} alt={data.socks[2].name} />
+                  <h5> {data.socks[2].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[3].picture} alt={data.socks[3].name} />
+                  <h5> {data.socks[3].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[4].picture} alt={data.socks[4].name} />
+                  <h5> {data.socks[4].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[5].picture} alt={data.socks[5].name} />
+                  <h5> {data.socks[5].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[6].picture} alt={data.socks[6].name} />
+                  <h5> {data.socks[6].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[7].picture} alt={data.socks[7].name} />
+                  <h5> {data.socks[7].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[8].picture} alt={data.socks[8].name} />
+                  <h5> {data.socks[8].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[9].picture} alt={data.socks[9].name} />
+                  <h5> {data.socks[9].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[10].picture} alt={data.socks[10].name} />
+                  <h5> {data.socks[10].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[11].picture} alt={data.socks[11].name} />
+                  <h5> {data.socks[11].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[12].picture} alt={data.socks[12].name} />
+                  <h5> {data.socks[12].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[13].picture} alt={data.socks[13].name} />
+                  <h5> {data.socks[13].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[14].picture} alt={data.socks[14].name} />
+                  <h5> {data.socks[14].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[15].picture} alt={data.socks[15].name} />
+                  <h5> {data.socks[15].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[16].picture} alt={data.socks[16].name} />
+                  <h5> {data.socks[16].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[17].picture} alt={data.socks[17].name} />
+                  <h5> {data.socks[17].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[18].picture} alt={data.socks[18].name} />
+                  <h5> {data.socks[18].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[19].picture} alt={data.socks[19].name} />
+                  <h5> {data.socks[19].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[20].picture} alt={data.socks[20].name} />
+                  <h5> {data.socks[20].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[21].picture} alt={data.socks[21].name} />
+                  <h5> {data.socks[21].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[22].picture} alt={data.socks[22].name} />
+                  <h5> {data.socks[22].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[23].picture} alt={data.socks[23].name} />
+                  <h5> {data.socks[23].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[24].picture} alt={data.socks[24].name} />
+                  <h5> {data.socks[24].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[25].picture} alt={data.socks[25].name} />
+                  <h5> {data.socks[25].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[26].picture} alt={data.socks[26].name} />
+                  <h5> {data.socks[26].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[27].picture} alt={data.socks[27].name} />
+                  <h5> {data.socks[27].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[28].picture} alt={data.socks[28].name} />
+                  <h5> {data.socks[28].name} </h5>
+                </div>
+                <div className="imgContentDiv">
+                  <img src={data.socks[29].picture} alt={data.socks[29].name} />
+                  <h5> {data.socks[29].name} </h5>
+                </div>
             </div>
         </div>
         <h1 id="noResults"> No Results Found</h1>
@@ -378,13 +596,12 @@ const SearchPage = (props) => {
     }
   });
   return (
-     <div id="searchPageDiv">
-        <div id="searchStart">
-          <div className="taglineDiv">
+    <div id="searchStart">
+        <div className="taglineDiv">
             <h1> Socko's Socks! </h1>
             <h3> "Who needs friends when you have cool socks?" </h3>
-          </div>
-          <div id="searchInfo">
+        </div>
+        <div id="searchInfo">
             <form id="searchForm" 
             name="searchForm"
             onInput={handleSearchInput}
@@ -399,7 +616,6 @@ const SearchPage = (props) => {
             <input type="image" src="assets/img/searchButton.png" alt="searchButton" className="searchSubmit" />
             </form>
         </div>
-      </div>
     </div>
   );
 };
@@ -456,45 +672,57 @@ const BuyPage = (props, name, price, category, picture) => { // create and rende
             <h3> "Who needs friends when you have cool socks?" </h3>
           </div>
           <br/>
-          <div id="buyInfo">
-            <img src={picture} alt={name}/>
-            <h3> Name: {name} </h3>
-            <h3> Category: {category} </h3>
-            <h3> Price: {price} </h3>
-            <form id="buySocksForm" 
-              name="buySocksForm"
-              onSubmit={handleBuySocks}
-              action="/buySocks"
-              method="POST"
-              className="buyForm"
-            >
-            <input id="socksBought" type="hidden" name="socksBought" value={name} /> 
-            <input id="socksPrice" type="hidden" name="socksPrice" value={price} />
-            <input id="socksCategory" type="hidden" name="socksCategory" value={category} />
-            <input id="socksPicture" type="hidden" name="socksPicture" value={picture} />
-            <input id="socksProps" type="hidden" name="socksProps" value={props} />
-            <input id="currFunds" type="hidden" name="currFunds" value={data.info[0].funds} />
-            <input type="hidden" name="_csrf" value={props.csrf} />
-            <input className="buyForm" type="submit" value="Buy Now!" />
-            </form>
-          </div>
-          <div id="similarSocks">
-            <div id="recommend">
-              <h4> Based on your selection, we also recommend </h4>
-              <br/>
+          <div id="buyPage">
+            <div id="buyInfo">
+              <div id="sockInfo">
+                <img src={picture} alt={name}/>
+                <h3 id="sockCategory"> Our featured product </h3>
+              </div>
+              <div id="sockBuy"> 
+                <h3 id="sockName"> &nbsp; {name}:  </h3>
+                <h3 id="sockPrice"> &nbsp; ${price}  </h3>
+                <h6> Category: {category} </h6>
+                <h6> Plus shipping and handling </h6>
+                <h6> Takes 5-7 business days </h6>
+                <h6> One size only </h6>
+                <h6> Quantity: 1 </h6>
+                <form id="buySocksForm" 
+                  name="buySocksForm"
+                  onSubmit={handleBuySocks}
+                  action="/buySocks"
+                  method="POST"
+                  className="buyForm"
+                >
+                <input id="socksBought" type="hidden" name="socksBought" value={name} /> 
+                <input id="socksPrice" type="hidden" name="socksPrice" value={price} />
+                <input id="socksCategory" type="hidden" name="socksCategory" value={category} />
+                <input id="socksPicture" type="hidden" name="socksPicture" value={picture} />
+                <input id="socksProps" type="hidden" name="socksProps" value={props} />
+                <input id="currFunds" type="hidden" name="currFunds" value={data.info[0].funds} />
+                <input type="hidden" name="_csrf" value={props.csrf} />
+                <input className="buyForm" type="submit" value="Buy Now!" />
+                </form>
+                <br/>
+              </div>
             </div>
-            <div id="socksR">
-              <div id="sock1">
-                <img src={pic1} alt={pic1Name}/>
-                <h5> {pic1Name} </h5>
+            <div id="similarSocks">
+              <div id="recommend">
+                <h4> Also Recommended: </h4>
+                <br/>
               </div>
-              <div id="sock2">
-                <img src={pic2} alt={pic2Name}/>
-                <h5> {pic2Name} </h5>
-              </div>
-                <div id="sock3">
-                <img src={pic3} alt={pic3Name}/>
-                <h5> {pic3Name} </h5>
+              <div id="socksR">
+                <div id="sock1">
+                  <img src={pic1} alt={pic1Name}/>
+                  <h5> {pic1Name} </h5>
+                </div>
+                <div id="sock2">
+                  <img src={pic2} alt={pic2Name}/>
+                  <h5> {pic2Name} </h5>
+                </div>
+                  <div id="sock3">
+                  <img src={pic3} alt={pic3Name}/>
+                  <h5> {pic3Name} </h5>
+                </div>
               </div>
             </div>
           </div>
@@ -530,6 +758,7 @@ const ConfirmPage = (props, name, price, category, picture) => { // created buy 
       </div>
       <br/>
       <div id="confirmInfo">
+        <br/>
         <h2> Thank you for your purchase!</h2>
         <br/>
         <h3> Receipt Information: </h3>
@@ -539,12 +768,15 @@ const ConfirmPage = (props, name, price, category, picture) => { // created buy 
         <br/>
         <div id="backBrowsingTab">
           <img src="assets/img/leftArrow.png" alt="toSearch"/>
+          <p> &nbsp; </p>
           <a href="search"> <h5> Back to Browsing </h5> </a>
         </div>
         <div id="myCollectionTab">
           <img src="assets/img/leftArrow.png" alt="toCollection"/>
+          <p> &nbsp; </p>
           <a href="collection"> <h5> My Collection </h5> </a>
         </div>
+        <p> &nbsp; </p>
       </div>
     </div>, document.querySelector("#content")
   );
@@ -555,16 +787,39 @@ const ConfirmPage = (props, name, price, category, picture) => { // created buy 
 };
 
 const CollectionPage = (props) => { 
+  // create search page to load socks from database; if sock is clicked or searched for, load buy page with correct info.
+  sendAjax('GET', '/getAccInfo', null, (data) => {
+    console.log(data.info[0].sockPic.length);
+    if(data.info[0].sockPic.length === 0) {
+      ReactDOM.render(
+        <div id="collectionStart">
+            <div className="taglineDiv">
+                <h1> Socko's Socks! </h1>
+                <h3> "Who needs friends when you have cool socks?" </h3>
+            </div>
+            <div id="collectionInfo">
+                <h3> <b> Recent Purchases </b> </h3>
+            </div>
+            <div id="collectionPageDiv">
+                <br/>
+                <h3> No Socks Yet :( </h3>
+            </div>
+        </div>, document.querySelector("#content")
+      );
+    } 
+    else {
+      createInvObject();
+    }
+  });
   return (
     <div id="collectionStart">
-     <div className="taglineDiv">
-        <h1> Socko's Socks! </h1>
-        <h3> "Who needs friends when you have cool socks?" </h3>
-      </div>
-      <br/>
-      <div>
-        <h2> Collection Page TBD </h2>
-      </div>
+        <div className="taglineDiv">
+            <h1> Socko's Socks! </h1>
+            <h3> "Who needs friends when you have cool socks?" </h3>
+        </div>
+        <div id="collectionInfo">
+            <h3> <b> Recent Purchases </b> </h3>
+        </div>
     </div>
   );
 };

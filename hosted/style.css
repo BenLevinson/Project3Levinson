@@ -2,9 +2,11 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding-top: 20px;
     overflow-x: hidden;
-    background-color: lightgrey !important;
+    background-color: #E1E1E1 !important;
+    background-image: url(img/pipes.png) !important;
+    font-family: 'Raleway', sans-serif !important;
 }
 
 nav {
@@ -13,8 +15,7 @@ nav {
     background-color: #55acee;
     position: relative;
     top: 10px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    font-size: 15px;
 }
 
 nav:nth-child(1) {
@@ -35,7 +36,6 @@ nav:nth-child(1) {
     color: white;
     text-decoration: none;
     padding: 5px;
-    border-radius: 4px;
     background-color: #55acee;
     transition: background-color 0.4s ease;
 }
@@ -60,27 +60,31 @@ nav:nth-child(1) {
 .mainForm label {
     display: inline-block;
     width: 100px;
-    margin-right: 10px;
+    margin-right: 18px;
     text-align: right;
     font-size: 1.2em;
 }
 
-.formSubmit {
-    transition: background-color 0.4s ease;
+.formSubmit[type=submit] {
+    font-size: 24px;
     display: block;
-    text-align: center;
     margin: 0 auto;
-    margin-top: 14px;
-    font-size: 1.2em;
-    width: 100px;
-    background-color: #55acee;
-    border-radius: 2px;
-    border-color: #66acee;
-    padding: 3px 0px;
-    color: white;
-    text-decoration: none;
-    
+    position: relative;
+    background-color: #66acee;
+    color: #FFFFFF;
+    transition: 800ms ease all;
+    width: 130px;
+    height: 50px;
+    border: none;
+    outline: none;
 }
+
+.formSubmit[type=submit]:hover {
+    cursor: pointer;
+    background-color: #E1E1E1;
+    color: #66acee;
+}
+
 
 .formSubmit:link, .formSubmit:visited, .formSubmit:hover, .formSubmit:active {
     color: white;
@@ -94,7 +98,7 @@ nav:nth-child(1) {
 
 #user, #pass, #pass2 {
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1em;
     width: 180px;
     border-radius: 6px;
 }
@@ -110,8 +114,7 @@ nav:nth-child(1) {
     position: relative;
     top: 10px;
     width: 100%;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    color: white;
 }
 
 .taglineDiv h1 {
@@ -127,8 +130,12 @@ nav:nth-child(1) {
     font-size: 20px;
 }
 
-#loginStart {
+#loginInfo {
     text-align: center;
+    background-color: #E1E1E1;
+    position: relative;
+    bottom: 22px;
+    margin: 0 auto;
 }
 
 #accountStart {
@@ -150,66 +157,73 @@ nav:nth-child(1) {
 }
 
 .sockClass {
-    border: 2px solid black;
-    width: 350px;
+    border: 1px solid black;
+    width: 300px;
     height: 250px;
-    border-radius: 25px;
 }
 
 .sockClass:hover {
     cursor: pointer;
+    opacity: 0.7;
 }
 
 #scarySock {
     display: inline-block;
     position: relative;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 #crazySock {
     display: inline-block;
     position: relative;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 #funnySock {
     display: inline-block;
     position: relative;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 #coolSock {
     display: inline-block;
     position: relative;
-    padding-right: 10px;
+    padding-right: 20px;
     top: 20px;
 }
 
 #superSock {
     display: inline-block;
     position: relative;
-    padding-right: 10px;
+    padding-right: 20px;
     top: 20px;
 }
 
 #normalSock {
     display: inline-block;
     position: relative;
-    padding-right: 10px;
+    padding-right: 20px;
     top: 20px;
 }
 
 #accountInfo {
-    border: 2px solid black;
-    border-radius: 25px;
     display: block;
     margin: 0 auto;
     position: relative;
-    top: 10px;
+    background-color: #E1E1E1;
+    text-align: center;
 }
 
 #accountInfo h1 {
     font-size: 34px;
+}
+
+#accountInfo h2 {
+    text-align: left;
+    position: relative;
+    color: white;
+    background-color: darkgrey;
+    width: 100%;
 }
 
 #accountInfo p {
@@ -249,21 +263,21 @@ nav:nth-child(1) {
 }
 
 #displayContent img {
-    width: 125px;
-    height: 125px;
-    padding-top: 20px;
+    width: 100px;
+    height: 100px;
 }
 
 #displayContent img:hover {
     cursor: pointer;
+    opacity: 0.7;
 }
 
 .imgContentDiv {
     width: 125px;
-    height: 145px;
+    height: 125px;
     display: inline-block;
-    margin-left: 20px;
     margin-right: 20px;
+    margin-top: 5px;
     float: left;
 }
 
@@ -271,7 +285,11 @@ nav:nth-child(1) {
     text-align: center;
     font-size: 13px;
     position: relative;
-    top: 5px;
+    top: 3px;
+}
+
+.imgContentDiv img {
+    border: 1px solid black;
 }
 
 #topRowSocks {
@@ -338,17 +356,35 @@ nav:nth-child(1) {
     margin: 0 auto;
 }
 
+.passForm[type=submit] {
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    background-color: #66acee;
+    color: #FFFFFF;
+    transition: 800ms ease all;
+    width: 80px;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+
+.passForm[type=submit]:hover {
+    cursor: pointer;
+    background-color: #E1E1E1;
+    color: #66acee;
+}
+
 #fundsSubmit {
     width: 150px;
     position: relative;
-    top: 3px;
 }
 
 .fundsForm {
     position: relative;
     width: 250px;
     display: inline-block;
-    bottom: 20px;
 }
 
 .fundsForm label {
@@ -359,6 +395,27 @@ nav:nth-child(1) {
 .fundsForm input {
     display: block;
     margin: 0 auto;
+    position: relative;
+}
+
+.fundsForm[type=submit] {
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    background-color: #66acee;
+    color: #FFFFFF;
+    transition: 800ms ease all;
+    width: 80px;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+
+.fundsForm[type=submit]:hover {
+    cursor: pointer;
+    background-color: #E1E1E1;
+    color: #66acee;
 }
 
 #notFoundPage {
@@ -376,67 +433,113 @@ nav:nth-child(1) {
     bottom: 100px;
 }
 
-#buyInfo {
+#buyPage {
+    background-color: #E1E1E1;
+    position: relative;
+    bottom: 22px;
+    height: 710px;
+}
+
+#sockInfo {
+    width: 300px;
+    display: inline-block;
+    position: relative;
+    left: 140px;
+    top: 25px;
+}
+#sockName {
+    font-weight: bold;
+    position: relative;
+}
+
+#sockCategory {
+    position: relative;
+    top: 18px;
     text-align: center;
-    margin: 0 auto;
+    font-size: 20px;
+}
+
+#sockPrice {
+    position: relative;
+    font-weight: bold;
 }
 
 #buyInfo img {
-    width: 250px;
-    height: 250px;
+    width: 225px;
+    height: 225px;
     border: 1px solid black;
-    border-radius: 25px;
     position: relative;
-    right: 200px;
-    top: 50px;
+    top: 12px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
 }
 
-#buyInfo h3 {
+#sockBuy {
+    border: 1px solid black;
+    width: 300px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
     position: relative;
-    left: 100px;
-    bottom: 200px;
+    background-color: white;
+    top: 45px;
+    left: 300px;
 }
 
 .buyForm { 
     font-size: 24px;
     display: block;
     margin: 0 auto;
-    padding: 10px;
     position: relative;
-    bottom: 92px;
-    left: 50px;
+    background-color: #66acee;
+    color: #FFFFFF;
+    transition: 800ms ease all;
+    width: 130px;
+    height: 50px;
+    border: none;
+    outline: none;
 }
 
 .buyForm:hover {
     cursor: pointer;
+    background-color: #FFFFFF;
+    color: #66acee;
+}
+
+
+#recommend {
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
 }
 
 #similarSocks {
     position: relative;
-    text-align: center;
     display: block;
     margin: 0 auto;
+    top: 85px;
 }
 
-#similarSocks h3 {
+#similarSocks h4 {
     position: relative;
-    top: 70px;
+    font-weight: bold;
+    top: 17px;
+    text-align: center;
 }
 
 #similarSocks h5 {
     font-size: 18px;
+    position: relative;
+    top: 22px;
+    text-align: center;
 }
 
 #similarSocks img {
     width: 200px;
     height: 200px;
     border: 1px solid black;
-    border-radius: 25px;
-}
-
-#socksR {
-    border: 1px solid black;
-    border-radius: 25px;
+    position: relative;
+    top: 15px;
 }
 
 #sock1 {
@@ -462,19 +565,25 @@ nav:nth-child(1) {
 
 #sock1:hover {
     cursor: pointer;
+    opacity: 0.7;
 }
 
-#sock2 {
+#sock2:hover {
     cursor: pointer;
+    opacity: 0.7;
 }
 
-#sock3 {
+#sock3:hover {
     cursor: pointer;
+    opacity: 0.7;
 }
 
 #noResults {
     visibility: hidden;
     text-align: center;
+    position: relative;
+    bottom: 670px;
+    right: 10px;
 }
 
 #confirmStart {
@@ -482,8 +591,10 @@ nav:nth-child(1) {
 }
 
 #confirmInfo {
-    border: 2px solid black;
-    border-radius: 25px;
+    background-color: #E1E1E1;
+    display: block;
+    position: relative;
+    bottom: 22px;
 }
 
 #backBrowsingTab {
@@ -504,9 +615,159 @@ nav:nth-child(1) {
     width: 250px;
     height: 250px;
     border: 1px solid black;
-    border-radius: 25px;
+}
+
+#searchPageDiv {
+    background-color: #E1E1E1;
+    position: relative;
+    bottom: 17px;
+    padding-top: 17px;
+    height: 670px;
+}
+
+#searchStart {
+    background-color: #E1E1E1;
+}
+
+#topRow {
+    position: relative;
+    left: 5px;
+    top: 50px;
+}
+
+#bottomRow {
+    position: relative;
+    left: 5px;
+    top: 50px;
+}
+
+#loginW {
+    background-color: #E1E1E1;
+}
+
+#signupW {
+    background-color: #E1E1E1;
+}
+
+#infoOne {
+    display: none;
+}
+
+#infoTwo {
+   display: none;
+}
+
+#infoThree {
+    display: none;
+}
+
+#accountInfo h2:hover {
+    cursor: pointer;
 }
 
 #collectionStart {
+    background-color: #E1E1E1;
+}
+
+#collectionInfo {
+    position: relative;
     text-align: center;
+    z-index: 10;
+    top: 6px;
+}
+
+#collectionPageDiv {
+    background-color: #E1E1E1;
+    position: relative;
+    bottom: 17px;
+    padding-top: 17px;
+    height: 670px;
+}
+
+#collectionPageDiv h3 {
+    text-align: center;
+}
+
+#collectionContent {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    left: 40px;
+}
+
+#collectionContent img {
+    width: 100px;
+    height: 100px;
+}
+
+.imgCollectDiv {
+    width: 125px;
+    height: 125px;
+    display: none;
+    margin-right: 20px;
+    margin-top: 5px;
+    float: left;
+}
+
+.imgCollectDiv h5 {
+    text-align: center;
+    font-size: 13px;
+    position: relative;
+    top: 3px;
+}
+
+.imgCollectDiv img {
+    border: 1px solid black;
+}
+
+@media only screen and (max-width: 1200px) {
+    #buyPage {
+        height: 1050px;
+    }
+    #sockBuy {
+        left: 120px;
+    }
+    #sockInfo {
+        left: 80px;
+    }
+    #collectionPageDiv {
+        height: 850px;
+    }
+}
+@media only screen and (max-width: 995px) {
+    #searchPageDiv {
+        height: 1050px;
+    }
+    #collectionPageDiv {
+        height: 1250px;
+    }
+    #buyPage {
+        height: 1450px;
+    }
+    #sockBuy {
+        left: 40px;
+    }
+    #sockInfo {
+        left: 20px;
+    }
+}
+@media only screen and (max-width: 793px) {
+    #searchPageDiv {
+        height: 1310px;
+    } 
+    #collectionPageDiv {
+        height: 1610px;
+    } 
+    #sockBuy {
+        left: 20px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #searchPageDiv {
+        height: 2000px;
+    }
+    #collectionPageDiv {
+        height: 2360px;
+    }
 }

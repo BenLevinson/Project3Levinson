@@ -35,126 +35,154 @@ var handleSignup = function handleSignup(e) {
 };
 
 var ContentPage = function ContentPage(props) {
-  // create home page for users to see when not logged in; clicking a box prompts them to login
+  // created content page; when clicked, user should be logged in so it takes them to search page
   return React.createElement(
     "div",
-    { id: "loginStart" },
+    null,
     React.createElement(
       "div",
-      { className: "taglineDiv" },
+      { id: "loginStart" },
       React.createElement(
-        "h1",
-        null,
-        " Socko's Socks! "
-      ),
-      React.createElement(
-        "h3",
-        null,
-        " \"Who needs friends when you have cool socks?\" "
+        "div",
+        { className: "taglineDiv" },
+        React.createElement(
+          "h1",
+          null,
+          " Socko's Socks! "
+        ),
+        React.createElement(
+          "h3",
+          null,
+          " \"Who needs friends when you have cool socks?\" "
+        )
       )
     ),
     React.createElement("br", null),
     React.createElement(
       "div",
-      { id: "topRow" },
+      { id: "loginInfo" },
       React.createElement(
         "div",
-        { id: "scarySock" },
+        { id: "topRow" },
         React.createElement(
-          "a",
-          { href: "/search" },
-          " ",
-          React.createElement("img", { className: "sockClass", src: "assets/img/scarySock.jpg", alt: "Scary Socks" }),
-          " "
+          "div",
+          { id: "scarySock" },
+          React.createElement(
+            "a",
+            { href: "/search" },
+            " ",
+            React.createElement("img", { className: "sockClass", src: "assets/img/scarySock.jpg", alt: "Scary Socks" }),
+            " "
+          ),
+          React.createElement(
+            "label",
+            { htmlFor: "scarySock" },
+            " Scary Socks"
+          )
         ),
         React.createElement(
-          "label",
-          { htmlFor: "scarySock" },
-          " Scary Socks"
+          "div",
+          { id: "crazySock" },
+          React.createElement(
+            "a",
+            { href: "/search" },
+            " ",
+            React.createElement("img", { className: "sockClass", src: "assets/img/crazySock.jpg", alt: "Crazy Socks" }),
+            " "
+          ),
+          React.createElement(
+            "label",
+            { htmlFor: "crazySock" },
+            " Crazy Socks"
+          )
+        ),
+        React.createElement(
+          "div",
+          { id: "funnySock" },
+          React.createElement(
+            "a",
+            { href: "/search" },
+            " ",
+            React.createElement("img", { className: "sockClass", src: "assets/img/funnySock.jpg", alt: "Funny Socks" }),
+            " "
+          ),
+          React.createElement(
+            "label",
+            { htmlFor: "funnySock" },
+            " Funny Socks"
+          )
         )
       ),
       React.createElement(
         "div",
-        { id: "crazySock" },
+        { id: "bottomRow" },
         React.createElement(
-          "a",
-          { href: "/search" },
-          " ",
-          React.createElement("img", { className: "sockClass", src: "assets/img/crazySock.jpg", alt: "Crazy Socks" }),
-          " "
+          "div",
+          { id: "coolSock" },
+          React.createElement(
+            "a",
+            { href: "/search" },
+            " ",
+            React.createElement("img", { className: "sockClass", src: "assets/img/coolSock.jpg", alt: "Cool Socks" }),
+            " "
+          ),
+          React.createElement(
+            "label",
+            { htmlFor: "coolSock" },
+            " Cool Socks"
+          )
         ),
         React.createElement(
-          "label",
-          { htmlFor: "crazySock" },
-          " Crazy Socks"
-        )
-      ),
-      React.createElement(
-        "div",
-        { id: "funnySock" },
-        React.createElement(
-          "a",
-          { href: "/search" },
-          " ",
-          React.createElement("img", { className: "sockClass", src: "assets/img/funnySock.jpg", alt: "Funny Socks" }),
-          " "
+          "div",
+          { id: "superSock" },
+          React.createElement(
+            "a",
+            { href: "/search" },
+            " ",
+            React.createElement("img", { className: "sockClass", src: "assets/img/superSock.jpg", alt: "Super Socks" }),
+            " "
+          ),
+          React.createElement(
+            "label",
+            { htmlFor: "superSock" },
+            " Super Socks"
+          )
         ),
         React.createElement(
-          "label",
-          { htmlFor: "funnySock" },
-          " Funny Socks"
-        )
-      )
-    ),
-    React.createElement(
-      "div",
-      { id: "bottomRow" },
-      React.createElement(
-        "div",
-        { id: "coolSock" },
-        React.createElement(
-          "a",
-          { href: "/search" },
-          " ",
-          React.createElement("img", { className: "sockClass", src: "assets/img/coolSock.jpg", alt: "Cool Socks" }),
-          " "
+          "div",
+          { id: "normalSock" },
+          React.createElement(
+            "a",
+            { href: "/search" },
+            " ",
+            React.createElement("img", { className: "sockClass", src: "assets/img/normalSock.jpg", alt: "Normal Socks" }),
+            " "
+          ),
+          React.createElement(
+            "label",
+            { htmlFor: "normalSock" },
+            " Normal Socks"
+          )
         ),
         React.createElement(
-          "label",
-          { htmlFor: "coolSock" },
-          " Cool Socks"
-        )
-      ),
-      React.createElement(
-        "div",
-        { id: "superSock" },
-        React.createElement(
-          "a",
-          { href: "/search" },
-          " ",
-          React.createElement("img", { className: "sockClass", src: "assets/img/superSock.jpg", alt: "Super Socks" }),
-          " "
+          "p",
+          null,
+          " \xA0 "
         ),
         React.createElement(
-          "label",
-          { htmlFor: "superSock" },
-          " Super Socks"
-        )
-      ),
-      React.createElement(
-        "div",
-        { id: "normalSock" },
-        React.createElement(
-          "a",
-          { href: "/search" },
-          " ",
-          React.createElement("img", { className: "sockClass", src: "assets/img/normalSock.jpg", alt: "Normal Socks" }),
-          " "
+          "p",
+          null,
+          " \xA0 "
         ),
         React.createElement(
-          "label",
-          { htmlFor: "normalSock" },
-          " Normal Socks"
+          "p",
+          null,
+          " \xA0 "
+        ),
+        React.createElement(
+          "p",
+          null,
+          " \xA0 "
         )
       )
     )
@@ -181,28 +209,32 @@ var LoginWindow = function LoginWindow(props) {
       )
     ),
     React.createElement(
-      "form",
-      { id: "loginForm",
-        name: "loginForm",
-        onSubmit: handleLogin,
-        action: "/login",
-        method: "POST",
-        className: "mainForm"
-      },
+      "div",
+      { id: "loginW" },
       React.createElement(
-        "label",
-        { htmlFor: "username" },
-        "Username: "
-      ),
-      React.createElement("input", { id: "user", type: "text", name: "username", placeholder: "username" }),
-      React.createElement(
-        "label",
-        { htmlFor: "pass" },
-        "Password: "
-      ),
-      React.createElement("input", { id: "pass", type: "password", name: "pass", placeholder: "password" }),
-      React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
-      React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign In" })
+        "form",
+        { id: "loginForm",
+          name: "loginForm",
+          onSubmit: handleLogin,
+          action: "/login",
+          method: "POST",
+          className: "mainForm"
+        },
+        React.createElement(
+          "label",
+          { htmlFor: "username" },
+          "Username: "
+        ),
+        React.createElement("input", { id: "user", type: "text", name: "username", placeholder: "username" }),
+        React.createElement(
+          "label",
+          { htmlFor: "pass" },
+          "Password: "
+        ),
+        React.createElement("input", { id: "pass", type: "password", name: "pass", placeholder: "password" }),
+        React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
+        React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign In" })
+      )
     )
   );
 };
@@ -227,34 +259,38 @@ var SignupWindow = function SignupWindow(props) {
       )
     ),
     React.createElement(
-      "form",
-      { id: "signupForm",
-        name: "signupForm",
-        onSubmit: handleSignup,
-        action: "/signup",
-        method: "POST",
-        className: "mainForm"
-      },
+      "div",
+      { id: "signupW" },
       React.createElement(
-        "label",
-        { htmlFor: "username" },
-        "Username: "
-      ),
-      React.createElement("input", { id: "user", type: "text", name: "username", placeholder: "username" }),
-      React.createElement(
-        "label",
-        { htmlFor: "pass" },
-        "Password: "
-      ),
-      React.createElement("input", { id: "pass", type: "password", name: "pass", placeholder: "password" }),
-      React.createElement(
-        "label",
-        { htmlFor: "pass2" },
-        "Password: "
-      ),
-      React.createElement("input", { id: "pass2", type: "password", name: "pass2", placeholder: "retype password" }),
-      React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
-      React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign Up" })
+        "form",
+        { id: "signupForm",
+          name: "signupForm",
+          onSubmit: handleSignup,
+          action: "/signup",
+          method: "POST",
+          className: "mainForm"
+        },
+        React.createElement(
+          "label",
+          { htmlFor: "username" },
+          "Username: "
+        ),
+        React.createElement("input", { id: "user", type: "text", name: "username", placeholder: "username" }),
+        React.createElement(
+          "label",
+          { htmlFor: "pass" },
+          "Password: "
+        ),
+        React.createElement("input", { id: "pass", type: "password", name: "pass", placeholder: "password" }),
+        React.createElement(
+          "label",
+          { htmlFor: "pass2" },
+          "Confirm: "
+        ),
+        React.createElement("input", { id: "pass2", type: "password", name: "pass2", placeholder: "retype password" }),
+        React.createElement("input", { type: "hidden", name: "_csrf", value: props.csrf }),
+        React.createElement("input", { className: "formSubmit", type: "submit", value: "Sign Up" })
+      )
     )
   );
 };

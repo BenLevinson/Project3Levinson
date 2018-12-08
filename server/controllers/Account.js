@@ -32,20 +32,20 @@ const addFunds = (request, response) => { // add funds to user account
 const buySocks = (request, response) => { // buy socks for user account
   const req = request;
   const res = response;
-  const socksToBuy = `${req.body.socksBought}`;
+  const sN = `${req.body.socksBought}`;
   const socksPrice = `${req.body.socksPrice}`;
   // const socksCategory = `${req.body.socksCategory}`;
-  // const socksPicture = `${req.body.socksPicture}`;
+  const sPic = `${req.body.socksPicture}`;
   const currFunds = `${req.body.currFunds}`;
-  const socksPriceInt = 1 + parseInt(socksPrice, 10);
+  const sPInt = 1 + parseInt(socksPrice, 10);
   const currFundsInt = parseInt(currFunds, 10);
 
-  if (!socksToBuy) {
+  if (!sN) {
     return res.status(400).json({ error: 'All fields are required.' });
-  } if (currFundsInt - socksPriceInt < 0) {
+  } if (currFundsInt - sPInt < 0) {
     return res.status(400).json({ error: 'Not enough funds to buy.' });
   }
-  return Account.AccountModel.buySocks(req.session.account, socksPriceInt, (err, docs) => {
+  return Account.AccountModel.buySocks(req.session.account, sPInt, sN, sPic, (err, docs) => {
     if (err) {
       return res.status(400).json({ error: 'An error has occurred.' });
     }

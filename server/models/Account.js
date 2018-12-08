@@ -8,34 +8,6 @@ const iterations = 10000;
 const saltLength = 64;
 const keyLength = 64;
 
-const SockTemplate = new mongoose.Schema({ // inventory schema
-  name: {
-    type: String,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-  category: {
-    type: String,
-    required: true,
-  },
-  picture: {
-    type: String,
-    required: true,
-  },
-  amount: {
-    type: Number,
-    required: false,
-    default: 0,
-  },
-  createdDate: {
-    type: Date,
-    default: Date.now,
-  },
-});
-
 const AccountSchema = new mongoose.Schema({ // account schema
   username: {
     type: String,
@@ -64,8 +36,12 @@ const AccountSchema = new mongoose.Schema({ // account schema
     type: Number,
     required: false,
   },
-  inventory: {
-    type: SockTemplate,
+  sockName: {
+    type: [String],
+    required: false,
+  },
+  sockPic: {
+    type: [String],
     required: false,
   },
 });
@@ -128,7 +104,7 @@ AccountSchema.statics.addFunds = (doc, fundsToAdd, callback) => { // return upda
   return updatedInfo;
 };
 
-AccountSchema.statics.buySocks = (doc, socksPrice, callback) => { // return updated purchase info
+AccountSchema.statics.buySocks = (doc, sP, sN, sPic, callback) => { // return updated purchase info
   const info = {
     username: doc.username,
     purchases: doc.purchases,
@@ -140,12 +116,14 @@ AccountSchema.statics.buySocks = (doc, socksPrice, callback) => { // return upda
       $inc:
       {
         purchases: 1,
-        funds: -1 * socksPrice,
+        funds: -1 * sP,
       },
-      // $addToSet:
-      // {
-        // inventory: [name, socksPrice, category, picture, 1],
-      // },
+      $push:
+      {
+        sockPic: { $each: [sPic], $position: 0 },
+        sockName: { $each: [sN], $position: 0 },
+
+      },
     },
     { new: true, upsert: true },
     callback);
